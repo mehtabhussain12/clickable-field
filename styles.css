@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #8b4343;
+}
+
+.clickable-field {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.clickable-field::after {
+  content: '';
+  display: none;
+  width: 15px;
+  height: 15px;
+  background-image: url('tick.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.clickable-field.clicked {
+  background-color: rgba(0, 128, 0, 0.7);
+}
+
+.clickable-field.clicked::after {
+  display: block;
+}
